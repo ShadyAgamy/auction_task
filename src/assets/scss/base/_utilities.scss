@@ -1,0 +1,33 @@
+.mainp {
+    font-size: 24px;
+    color: $textGrey;
+    font-weight: 400;
+}
+
+.btn.btn-primary {
+    color: #fff;
+}
+
+.main_heading {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+    position: relative;
+    color: $darkGreen;
+    width: fit-content;
+    margin-bottom: 4rem;
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: -50%;
+        left: 0;
+        width: 75%;
+        height: 4px;
+        background: $colorPrimary;
+        border-radius: 5px;
+    }
+}
+
+.main_border_radius {
+    border-radius: 8px;
+}

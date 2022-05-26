@@ -1,0 +1,48 @@
+.header {
+    padding: 3.5rem 0;
+    h2 {
+        color: $colorPrimary;
+        font-size: 56px;
+        font-weight: 700;
+    }
+    h1 {
+        color: $textBlack;
+        font-size: 56px;
+        font-weight: 500;
+    }
+    .searchForItems {
+        &_header {
+            color: $textBlack;
+            font-size: 28px;
+        }
+        .input-group {
+            height: 70px;
+            background-color: $gray;
+            border-radius: 8px;
+            overflow: hidden;
+            .VerticalGutter {
+                margin-left: 0!important;
+                width: 1px;
+                height: 40px;
+                background-color: #C5D7DF;
+                align-self: center;
+            }
+            .form-select {
+                background-color: $gray;
+                color: $darkerGreen;
+                font-size: 1rem;
+                font-weight: 500;
+                margin-left: 0!important;
+                border: unset;
+                cursor: pointer;
+            }
+        }
+        .btn {
+            width: 128px;
+            i {
+                font-size: 16px;
+                margin-right: 6px;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+$primary: #04D99D;
+// customize spacing
+$spacer: .5rem;
+$spacers: ( 0:0);
+@for $i from 1 through 50 {
+    $spacers: map-merge($spacers, ( $i: ($i * $spacer)));
+}
+
+@import "../../../../node_modules/bootstrap//scss/bootstrap.scss";
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    @include media-breakpoint-up(lg) {
+        max-width: 1300px;
+    }
+}
