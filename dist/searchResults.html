@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" type="image/png" href="./assets/images/goal.png" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+</head>
+
+<body>
+    <nav class=" navbar navbar-expand-lg  py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="img-fluid" src="./assets/images/logo.png" alt="logo"></a>
+
+            <div class="dropdown langs">
+                <img class="img-fluid" src="./assets/images/flag.png" alt="language" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <ul class="dropdown-menu text-center">
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                    <li><a class="dropdown-item" href="#">عربى</a></li>
+                </ul>
+            </div>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Auctions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact us</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <button type="button" class="btn btn-primary me-3 ">Sign in</button>
+                    <button class="btn btn-outline-primary" type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';" class="py-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#"> Cat.</a></li>
+                <li class="breadcrumb-item active text-primary fw-normal" aria-current="page">Auction Name</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="filter_results row ">
+        <aside class="filter_nav col-md-3 pe-0 pb-10">
+            <h5 class="title ps-5 d-flex align-items-center">Filter By</h5>
+            <div class="ps-5 pe-2">
+                <div class="filter mt-4">
+                    <h5>Auction Type</h5>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input text-primary" type="checkbox" value="" id="all" checked>
+                        <label class="form-check-label" for="all">
+                            All
+                        </label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="live" checked>
+                        <label class="form-check-label" for="live">
+                            Live
+                        </label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="ended" checked>
+                        <label class="form-check-label" for="ended">
+                            Ended
+                        </label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="suspended" checked>
+                        <label class="form-check-label" for="suspended">
+                            Suspended
+                        </label>
+                    </div>
+                </div>
+                <div class="filter mt-4">
+                    <h5 for="maxPrice" class="form-label">Max. Price</h5>
+                    <input type="range" class="form-range text-primary" min="50" max="1500" id="maxPrice">
+
+                </div>
+                <div class="filter mt-4">
+                    <h5 for="piddingPrice" class="form-label">Bidding Price</h5>
+                    <input type="range" class="form-range text-primary" id="piddingPrice">
+                </div>
+                <div class="filter mt-4 me-2">
+                    <h5 class="form-label">Bidding Date</h5>
+                    <div class="d-flex">
+                        <div class="w-50 me-2">
+                            <label class="mb-1" for="startDate">From</label>
+                            <input id="startDate" class="form-control form-control-sm" type="date" />
+                        </div>
+                        <div class="w-50">
+                            <label class="mb-1" for="startDate">To</label>
+                            <input id="startDate" class="form-control form-control-sm" type="date" />
+                        </div>
+                    </div>
+                </div>
+                <div class="filter mt-4 me-2">
+                    <h5 class="form-label">City</h5>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected disabled>choose city</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </div>
+                <div class="filter mt-4">
+                    <h5>Auction Category</h5>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input text-primary" type="checkbox" value="" id="allCat">
+                        <label class="form-check-label" for="allCat">
+                            All
+                        </label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Cat1" checked>
+                        <label class="form-check-label" for="Cat1">
+                            Cat 1
+                        </label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Cat2" checked>
+                        <label class="form-check-label" for="Cat2">
+                            Cat 2
+                        </label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Cat3" checked>
+                        <label class="form-check-label" for="Cat3">
+                            Cat 3
+                        </label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Cat4" checked>
+                        <label class="form-check-label" for="Cat4">
+                            Cat 4
+                        </label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Cat5">
+                        <label class="form-check-label" for="Cat5">
+                            Cat 5
+                        </label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Cat6">
+                        <label class="form-check-label" for="Cat6">
+                            Cat 6
+                        </label>
+                    </div>
+                </div>
+                <div class="filter mt-4">
+                    <h5 for="year" class="form-label">Year</h5>
+                    <input type="range" min="2004" max="2021" step="1" class="form-range text-primary" id="year">
+                </div>
+                <button type="button" class="btn btn-outline-primary w-100 mt-4">Reset</button>
+            </div>
+        </aside>
+        <div class="col-md-9 results">
+            <div class="d-flex align-items-center mb-1">
+                <h1 class="me-2 ">Auction Name</h1>
+                <span>(16 results)</span>
+            </div>
+            <div class="sortBy d-flex align-items-center">
+                <span class="me-2">Sort by:</span>
+                <ul class="nav nav-tabs border-0" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="bidding-date-tab" data-bs-toggle="tab" data-bs-target="#bidding-date" type="button" role="tab" aria-controls="bidding-date" aria-selected="true">Bidding Date</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="No-of-Bids-tab" data-bs-toggle="tab" data-bs-target="#No-of-Bids" type="button" role="tab" aria-controls="No-of-Bids" aria-selected="false">No. of Bids</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="max-price-tab" data-bs-toggle="tab" data-bs-target="#max-price" type="button" role="tab" aria-controls="max-price" aria-selected="false">Max. Price</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="bidding-price-tab" data-bs-toggle="tab" data-bs-target="#bidding-price" type="button" role="tab" aria-controls="bidding-price" aria-selected="false">Bidding Price</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content mt-6 mb-10" id="myTabContent">
+                <div class="tab-pane fade show active" id="bidding-date" role="tabpanel" aria-labelledby="bidding-date-tab">
+                    <div class="row cardGrid">
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mt-4">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true"><i class="fa-solid fa-angle-left"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true"><i class="fa-solid fa-angle-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true"><i class="fa-solid fa-angles-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="No-of-Bids" role="tabpanel" aria-labelledby="No-of-Bids-tab">
+                    <div class="row cardGrid">
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="max-price" role="tabpanel" aria-labelledby="max-price-tab">
+                    <div class="row cardGrid">
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="bidding-price" role="tabpanel" aria-labelledby="bidding-price-tab">
+                    <div class="row cardGrid">
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shadow main_border_radius">
+                                <img src="./assets/images/dinningRoom.png" class="card-img-top" alt="dinning Room">
+                                <div class="card_hidden_actions d-flex align-items-center justify-content-between">
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="" class="text-primary d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="d-flex align-items-center justify-content-center"><i
+                                            class="fa-solid fa-share-nodes"></i></a>
+                                </div>
+                                <div class="stats d-flex align-items-center justify-content-between">
+                                    <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                    <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                    <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                                </div>
+                                <div class="card-body pt-2 pb-1">
+                                    <h5 class="card-title">Dining Room, 6 chairs and table</h5>
+                                </div>
+                                <ul class="list-group list-group-flush border-0">
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. No.
+                                            9, El-maadi, cairo</span></li>
+                                    <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span>14 days : 23
+                                            hrs : 40 min</span> </li>
+                                    <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Ends
+                                            Thursday, 15 sep. 2021</span> </li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary w-100">Place Bid</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./assets/js/all.js"></script>
+</body>

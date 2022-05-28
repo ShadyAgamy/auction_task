@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" type="image/png" href="./assets/images/goal.png" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+</head>
+
+<body>
+    <nav class=" navbar navbar-expand-lg  py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="img-fluid" src="./assets/images/logo.png" alt="logo"></a>
+
+            <div class="dropdown langs">
+                <img class="img-fluid" src="./assets/images/flag.png" alt="language" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <ul class="dropdown-menu text-center">
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                    <li><a class="dropdown-item" href="#">عربى</a></li>
+                </ul>
+            </div>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Auctions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact us</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <button type="button" class="btn btn-primary me-3 ">Sign in</button>
+                    <button class="btn btn-outline-primary" type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';" class="pt-3 pb-2">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#"> Cat.</a></li>
+                <li class="breadcrumb-item active text-primary fw-normal" aria-current="page">Auction Name</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container pb-10">
+        <div class="cardGrid">
+            <div class="card mb-3 border-0  auctionDetails ">
+                <div class="row g-0 ">
+                    <div class="col-md-5">
+                        <img class="img_main img-fluid " src="./assets/images/dinningRoom.png" alt="dinningRoom">
+                        <div class="imgs_thumbnails d-flex align-content-center mt-1 justify-content-between">
+                            <img src="./assets/images/dinningRoom.png" alt="dinningRoom">
+                            <img src="./assets/images/dinningRoom.png" alt="dinningRoom">
+                            <img src="./assets/images/dinningRoom.png" alt="dinningRoom">
+                            <img src="./assets/images/dinningRoom.png" alt="dinningRoom">
+                            <img src="./assets/images/dinningRoom.png" alt="dinningRoom">
+                            <img src="./assets/images/dinningRoom.png" alt="dinningRoom">
+                            <img src="./assets/images/dinningRoom.png" alt="dinningRoom">
+                            <img src="./assets/images/dinningRoom.png" alt="dinningRoom">
+                        </div>
+                    </div>
+                    <div class="col-md-7 ">
+                        <div class="card-body ps-3 me-md-4">
+                            <h5 class="card-title mb-3">Auction Name</h5>
+                            <p class="card-text  mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                            </p>
+                            <div class="stats d-flex align-items-center justify-content-between mb-3 ">
+                                <span><i class="fa-solid fa-eye text-primary"></i> 114</span>
+                                <span><i class="fa-solid fa-calendar text-primary"></i>12 sep. 2021</span>
+                                <span><i class="fa-solid fa-gavel text-primary"></i>24 bids</span>
+                            </div>
+                            <ul class="list-group list-group-flush border-0 mb-4">
+                                <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-location-dot"></i><span class="fw-normal">St. Auction location</span></li>
+                                <li class="list-group-item border-0 mb-1 "><i class="fa-solid fa-clock"></i><span class="fw-normal">Timer for bidding end</span> </li>
+                                <li class="list-group-item border-0 mb-1"><i class="fa-solid fa-calendar"></i><span class="fw-normal">Bidding end date</span> </li>
+                            </ul>
+                            <div class=" d-flex btns">
+                                <button class="btn btn-primary ">Place Bid (over 15,500 SAR)</button>
+                                <button class="btn btn-outline-primary " data-bs-toggle="modal" data-bs-target="#buyNowModal">Buy Now (17,000 SAR)</button>
+                                <button class="btn btn-outline-primary "><i
+                                        class="fa-solid fa-share-nodes"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="accordion accordion-flush mt-7" id="accordionFlushExample">
+                    <h3 class="mb-3">Questions & Answers</h3>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                who avoids produces resultant pleasure?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                who avoids produces resultant pleasure?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                who avoids produces resultant pleasure?
+                            </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="cash-tab" data-bs-toggle="tab" data-bs-target="#cash" type="button" role="tab" aria-controls="cash" aria-selected="true">Pay in cash</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="instilment-tab" data-bs-toggle="tab" data-bs-target="#instilment" type="button" role="tab" aria-controls="instilment" aria-selected="false">Pay by instilment</button>
+                        </li>
+
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="cash" role="tabpanel" aria-labelledby="cash-tab">
+                            <h6 class="my-2">Choose the instillation plan you want</h6>
+                            <div class="row row-cols-1 row-cols-md-3 g-4">
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title d-flex align-items-baseline"><span>500</span> SAR/Month</h5>
+                                            <p class="card-text">for 38 months (2 yrs, 10 mon)</p>
+                                            <h6>Total price: 19,000 SAR</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-primary w-100">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title d-flex align-items-baseline"><span>750</span> SAR/Month</h5>
+                                            <p class="card-text">for 24 months (2 yrs)</p>
+                                            <h6>Total price: 18,000 SAR</h6>
+
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-primary w-100">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title d-flex align-items-baseline"><span>1000</span> SAR/Month</h5>
+                                            <h6>for 17 months (1 yrs, 5 mon)</h6>
+                                            <p class="card-text">Total price: 17,000 SAR</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-primary w-100">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="instilment" role="tabpanel" aria-labelledby="instilment-tab">
+                            <h6 class="my-2">Choose the instillation plan you want</h6>
+                            <div class="row row-cols-1 row-cols-md-3 g-4">
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title d-flex align-items-baseline"><span>500</span> SAR/Month</h5>
+                                            <p class="card-text">for 38 months (2 yrs, 10 mon)</p>
+                                            <h6>Total price: 19,000 SAR</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-primary w-100">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title d-flex align-items-baseline"><span>750</span> SAR/Month</h5>
+                                            <p class="card-text">for 24 months (2 yrs)</p>
+                                            <h6>Total price: 18,000 SAR</h6>
+
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-primary w-100">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title d-flex align-items-baseline"><span>1000</span> SAR/Month</h5>
+                                            <h6>for 17 months (1 yrs, 5 mon)</h6>
+                                            <p class="card-text">Total price: 17,000 SAR</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-primary w-100">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script async src="/assets/js/all.js"></script>
+</body>

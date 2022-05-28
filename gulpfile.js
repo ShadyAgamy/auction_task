@@ -4,7 +4,6 @@ const gulp = require('gulp'),
     del = require('del'),
     sourcemaps = require('gulp-sourcemaps'),
     plumber = require('gulp-plumber'),
-    less = require('gulp-less'),
     stylus = require('gulp-stylus'),
     autoprefixer = require('gulp-autoprefixer'),
     minifyCss = require('gulp-clean-css'),
@@ -53,17 +52,6 @@ gulp.task('sass', () => {
         .pipe(browserSync.stream());
 });
 
-gulp.task('less', () => {
-    return gulp.src([src_assets_folder + 'less/**/!(_)*.less'], { since: gulp.lastRun('less') })
-        .pipe(sourcemaps.init())
-        .pipe(plumber())
-        .pipe(less())
-        .pipe(autoprefixer())
-        .pipe(minifyCss())
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(dist_assets_folder + 'css'))
-        .pipe(browserSync.stream());
-});
 
 gulp.task('stylus', () => {
     return gulp.src([src_assets_folder + 'stylus/**/!(_)*.styl'], { since: gulp.lastRun('stylus') })
@@ -118,9 +106,9 @@ gulp.task('vendor', () => {
         .pipe(browserSync.stream());
 });
 
-gulp.task('build', gulp.series('clear', 'html', 'sass', 'less', 'stylus', 'js', 'images', 'vendor'));
+gulp.task('build', gulp.series('clear', 'html', 'sass', 'stylus', 'js', 'images', 'vendor'));
 
-gulp.task('dev', gulp.series('html', 'sass', 'less', 'stylus', 'js'));
+gulp.task('dev', gulp.series('html', 'sass', 'stylus', 'js'));
 
 gulp.task('serve', () => {
     return browserSync.init({
