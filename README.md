@@ -9,7 +9,7 @@ This should be installed on your computer in order to get up and running:
 
 
 ## Getting Started
-### `npm init`
+### `npm install`
 
 
 ### What kinds of build scripts does this project offer?
