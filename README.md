@@ -17,9 +17,9 @@ This should be installed on your computer in order to get up and running:
 2. `npm start`: This is the normal development script used to build all files and run all tasks, but also to serve a development server and watch for changes.
 
 
-Online Prieview:
-https://shadyagamy.github.io/auction_task/
-https://shadyagamy.github.io/auction_task/searchResults.html
-https://shadyagamy.github.io/auction_task/auctionDetails.html
+## Online Prieview:
+- https://shadyagamy.github.io/auction_task/
+- https://shadyagamy.github.io/auction_task/searchResults.html
+- https://shadyagamy.github.io/auction_task/auctionDetails.html
 
 
